@@ -9,10 +9,9 @@ import StyledHero from "../components/StyledHero";
 export default class SingleRoom extends Component {
   constructor(props) {
     super(props);
-    //console.log(this.props);
     this.state = {
       slug: this.props.match.params.slug,
-      defaultBcg
+      defaultBcg,
     };
   }
   static contextType = RoomContext;
@@ -38,12 +37,12 @@ export default class SingleRoom extends Component {
       size,
       price,
       extras,
-      breakfast,
-      pets,
-      images
+      wifi,
+      generator,
+      images,
     } = room;
     const [mainImg, ...defaultImg] = images;
-    console.log(defaultImg);
+
     return (
       <>
         <StyledHero img={mainImg || this.state.defaultBcg}>
@@ -66,14 +65,17 @@ export default class SingleRoom extends Component {
             </article>
             <article className="info">
               <h3>info</h3>
-              <h6>price : ${price}</h6>
-              <h6>size : ${size} SQFT</h6>
+              <h6>price : &#8358; {price}</h6>
+              <h6>size : {size}SQFT</h6>
               <h6>
-                max capacity:{" "}
-                {capacity > 1 ? `${capacity} people` : `${capacity} person`}
+                bedrooms :{" "}
+                {capacity > 1
+                  ? `${capacity} bedrooms`
+                  : `${capacity}
+                bedroom`}
               </h6>
-              <h6>{pets ? "pets allowed" : "no pets allowed"}</h6>
-              <h6>{breakfast && "free breakfast included"}</h6>
+              <h6>{generator && "accomodation generator included"}</h6>
+              <h6>{wifi && "free wifi included"}</h6>
             </article>
           </div>
         </section>

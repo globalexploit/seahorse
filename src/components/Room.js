@@ -11,8 +11,8 @@ export default function Room({ room }) {
       <div className="img-container">
         <img src={images[0] || defaultImg} alt="single room" />
         <div className="price-top">
-          <h6>${price}</h6>
-          <p>per night</p>
+          <h6>&#8358;{price}</h6>
+          <p>12 months</p>
         </div>
         <Link to={`/rooms/${slug}`} className="btn-primary room-link">
           Features
@@ -28,6 +28,6 @@ Room.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    price: PropTypes.number.isRequired
-  })
+    price: PropTypes.number.isRequired,
+  }),
 };

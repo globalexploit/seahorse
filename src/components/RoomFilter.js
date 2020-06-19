@@ -4,7 +4,7 @@ import { RoomContext } from "../context";
 import Title from "../components/Title";
 //get all unique values
 const getUnique = (items, value) => {
-  return [...new Set(items.map(item => item[value]))];
+  return [...new Set(items.map((item) => item[value]))];
 };
 
 export default function RoomFilter({ rooms }) {
@@ -19,8 +19,8 @@ export default function RoomFilter({ rooms }) {
     maxPrice,
     minSize,
     maxSize,
-    breakfast,
-    pets
+    wifi,
+    generator,
   } = context;
   //get unique types
   let types = getUnique(rooms, "type");
@@ -64,7 +64,7 @@ export default function RoomFilter({ rooms }) {
         {/* end select type */}
         {/* guest type */}
         <div className="form-group">
-          <label htmlFor="capacity">Guests</label>
+          <label htmlFor="capacity">Bedroom</label>
           <select
             name="capacity"
             id="capacity"
@@ -78,7 +78,7 @@ export default function RoomFilter({ rooms }) {
         {/* end guest type */}
         {/* room price */}
         <div className="form-group">
-          <label htmlFor="price">room price ${price}</label>
+          <label htmlFor="price">room price &#8358;{price}</label>
           <input
             type="range"
             name="price"
@@ -119,23 +119,23 @@ export default function RoomFilter({ rooms }) {
           <div className="single-extra">
             <input
               type="checkbox"
-              name="breakfast"
-              id="breakfast"
-              checked={breakfast}
+              name="wifi"
+              id="wifi"
+              checked={wifi}
               onChange={handleChange}
             />
-            <label htmlFor="breakfast">breakfast</label>
+            <label htmlFor="wifi">wifi</label>
           </div>
 
           <div className="single-extra">
             <input
               type="checkbox"
-              name="pets"
-              id="pets"
-              checked={pets}
+              name="generator"
+              id="generator"
+              checked={generator}
               onChange={handleChange}
             />
-            <label htmlFor="pets">pets</label>
+            <label htmlFor="generator">generator</label>
           </div>
         </div>
         {/* end of extras */}

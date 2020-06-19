@@ -7,29 +7,29 @@ export default class Services extends Component {
     services: [
       {
         icon: <FaCocktail />,
-        title: "free cocktails",
+        title: "no hidden charges",
         info:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, quibusdam."
+          "Yes, there is no hidden charges or extra charges, no agent fee or commision fee."
       },
       {
         icon: <FaHiking />,
-        title: "endless hiking",
+        title: "free consultant",
         info:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, quibusdam."
+          "Your comfortability and satisfaction is our pride, professional consultant will be attending to various need and questions.",
       },
       {
         icon: <FaShuttleVan />,
-        title: "free shuttle",
+        title: "easy UI",
         info:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, quibusdam."
+          "Our website is easily accessible to everyone, it has a child-friendly interface and can be adapted to in no time.",
       },
       {
         icon: <FaBeer />,
-        title: "strongest beer",
+        title: "secure payment",
         info:
-          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores, quibusdam."
-      }
-    ]
+          "We offer save, guarded and secure payment via 3D online secure payment using paypal.",
+      },
+    ],
   };
   render() {
     return (
