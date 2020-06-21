@@ -10,3 +10,4 @@ const StyledHero = styled.header`
   justify-content: center;
 `;
 export default StyledHero;
+

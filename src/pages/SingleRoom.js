@@ -16,7 +16,7 @@ export default class SingleRoom extends Component {
   }
   static contextType = RoomContext;
   //componentDidMount () {}
-  componentDidMount() {}
+  componentDidMount() { }
   render() {
     const { getRoom } = this.context;
     const room = getRoom(this.state.slug);
@@ -87,6 +87,13 @@ export default class SingleRoom extends Component {
             })}
           </ul>
         </section>
+        <align>
+          <Link to="/direction" className="btn-second">
+            g directions</Link>
+          <Link to="/paypal" className="btn-secondary">
+            paypal checkout
+        </Link>
+        </align>
       </>
     );
   }

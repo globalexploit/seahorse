@@ -10,6 +10,7 @@ class RoomProvider extends Component {
     sortedRooms: [],
     featuredRooms: [],
     loading: true,
+    location: "all",
     type: "all",
     capacity: 1,
     price: 0,
@@ -96,6 +97,7 @@ class RoomProvider extends Component {
     let {
       rooms,
       type,
+      location,
       capacity,
       price,
       minSize,
@@ -114,6 +116,11 @@ class RoomProvider extends Component {
     //filter by type
     if (type !== "all") {
       tempRooms = tempRooms.filter((room) => room.type === type);
+    }
+
+    //filter by location
+    if (location !== "all") {
+      tempRooms = tempRooms.filter((room) => room.location === location);
     }
 
     //filter by capacity

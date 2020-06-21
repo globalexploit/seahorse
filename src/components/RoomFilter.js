@@ -14,6 +14,7 @@ export default function RoomFilter({ rooms }) {
     handleChange,
     type,
     capacity,
+    location,
     price,
     minPrice,
     maxPrice,
@@ -28,6 +29,19 @@ export default function RoomFilter({ rooms }) {
   types = ["all", ...types];
   //map to jsx
   types = types.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  //get unique location
+  let locations = getUnique(rooms, "location");
+  //add all
+  locations = ["all", ...locations];
+  //map to jsx
+  locations = locations.map((item, index) => {
     return (
       <option value={item} key={index}>
         {item}
@@ -62,6 +76,22 @@ export default function RoomFilter({ rooms }) {
           </select>
         </div>
         {/* end select type */}
+
+        {/* select location */}
+        <div className="form-group">
+          <label htmlFor="location">location</label>
+          <select
+            name="location"
+            id="location"
+            value={location}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {locations}
+          </select>
+        </div>
+        {/* end select type */}
+
         {/* guest type */}
         <div className="form-group">
           <label htmlFor="capacity">Bedroom</label>
@@ -93,7 +123,7 @@ export default function RoomFilter({ rooms }) {
         {/* end of room price */}
         {/* size */}
         <div className="form-group">
-          <label htmlFor="size">room size</label>
+          <label htmlFor="size">room size SQ'FT</label>
           <div className="size-inputs">
             <input
               type="number"
